@@ -1,0 +1,113 @@
+.custom-th-id {
+  width: 100px;
+  min-width: 70px;
+}
+
+.custom-th {
+  width: 300px;
+  min-width: 100px;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.svgIcon {
+  display: flex;
+  width: 16px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.custom-icon-eliminar {
+  background-color: #ff0000;
+}
+
+.custom-icon-ver {
+  background-color: #1877f2;
+}
+
+.custom-icon-modificar {
+  background-color: #ffc107;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon {
+    display: flex;
+    width: 16px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 130px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    display: none;
+  }
+  
+  .custom-icon-eliminar {
+    background-color: #ff0000;
+  }
+  
+  .custom-icon-eliminar:hover::before {
+    content: "Eliminar";
+    color: white;
+    font-size: 16px;
+  }
+  
+  .custom-icon-ver {
+    background-color: #1877f2;
+  }
+  
+  .custom-icon-ver:hover::before {
+    content: "Ver";
+    color: white;
+    font-size: 16px;
+  }
+  
+  .custom-icon-modificar {
+    background-color: #ffc107;
+  }
+  
+  .custom-icon-modificar:hover::before {
+    content: "Modificar";
+    color: white;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,32 @@
+.custom-icon {
+    font-size: 50px;
+}
+
+.custom-a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 450px;
+}
+
+@media only screen and (max-width: 576px) {
+    .custom-a {
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .custom-a:hover {
+        animation: pulso 3s infinite; 
+    }
+    
+    @-webkit-keyframes pulso{
+        0%{-webkit-box-shadow:0 0 0 0 #0db0f0}
+        70%{-webkit-box-shadow:0 0 0 10px transparent}
+        100%{-webkit-box-shadow:0 0 0 0 transparent}
+    }
+    @keyframes pulso{
+        0%{-moz-box-shadow:0 0 0 0 #0db0f0;box-shadow:0 0 0 0 #0db0f0} 
+        70%{-moz-box-shadow:0 0 0 5px transparent;box-shadow:0 0 0 10px transparent}
+        100%{-moz-box-shadow:0 0 0 0 transparent;box-shadow:0 0 0 0 transparent}
+    }
+}
