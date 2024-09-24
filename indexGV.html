@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="validacionesGV.js"></script>
+  </head>
+<div class="container mt-5">
+
+  <header class="bg-dark text-white py-4 mb-4">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-center flex-grow-1 m-0 text-lg-start">Gestión de Vehículos</h1>
+        <!-- Perfil -->
+        <div class="dropdown">
+            <a class="btn btn-outline-light dropdown-toggle d-flex align-items-center" href="#" role="button" id="perfilDropdown"
+                data-bs-toggle="dropdown">
+                <i class="bi bi-person-circle me-2"></i> Perfil
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+ </header>
+
+<!-- Barra de Gestionar Marcas, Modelos y Unidades -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="marcas-tab" data-bs-toggle="tab" data-bs-target="#marcas" type="button" role="tab" aria-controls="marcas" aria-selected="true">Gestionar Marcas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="modelos-tab" data-bs-toggle="tab" data-bs-target="#modelos" type="button" role="tab" aria-controls="modelos" aria-selected="false">Gestionar Modelos</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="unidades-tab" data-bs-toggle="tab" data-bs-target="#unidades" type="button" role="tab" aria-controls="unidades" aria-selected="false">Gestionar Unidades</button>
+    </li>
+</ul>
+  
+  <!-- Tab Content -->
+  <div class="tab-content mt-4" id="myTabContent">
+    <!------------------ Gestionar Marcas ---------------------->
+    <div class="tab-pane fade show active" id="marcas" role="tabpanel" aria-labelledby="marcas-tab">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>Gestionar Marcas</h3>
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#agregarMarcaModal">Agregar Marca</button>
+      </div>
+      
+      <!-- Lista de marcas -->
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marca 1</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-sm" id="btnEditarMarca">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm"  id="EliminarMarcaBtn">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Más marcas -->
+        </tbody>
+      </table>
+    </div>
+    
+    <!------------------ Gestionar Modelos ---------------------->
+    <div class="tab-pane fade" id="modelos" role="tabpanel" aria-labelledby="modelos-tab">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>Gestionar Modelos</h3>
+        <button type="button" class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#Colapso" role="button" aria-expanded="false" aria-controls="Colapso">Agregar Modelo</button>
+      </div>
+  
+      <div class="collapse" id="Colapso">
+        <div class="card card-body">
+          <form id="agregarModeloForm" method="post" action="#">
+            <!-- Formulario de agregar modelo -->
+                <!-- Nombre del modelo -->
+                <div class="mb-3">
+                    <label for="nombreModelo" class="form-label">Nombre del Modelo</label>
+                    <input type="text" class="form-control" id="nombreModelo" name="nombreModelo" placeholder="Introduce el modelo">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <!-- Marca -->
+                <div class="mb-3">
+                    <label for="MarcaModelo" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="MarcaModelo" name="MarcaModelo" placeholder="Introduce la marca"> <!--required-->
+                    <div class="invalid-feedback"></div>
+                </div>
+               <!-- Año de fabricación -->
+                <div class="mb-3">
+                    <label for="Inputanio" class="form-label">Año</label>
+                    <input type="number" class="form-control" id="Inputanio" name="Inputanio" placeholder="Introduce el año de fabricación"  max="2025">
+                    <div class="invalid-feedback"></div>
+                </div>
+                 <!-- Tipo de vehículo -->
+                <div class="mb-3">
+                    <label for="tipoVehiculo" class="form-label">Tipo de Vehículo</label>
+                    <select class="form-select" id="tipoVehiculo" name="tipoVehiculo">
+                        <option value="">Seleccione un tipo</option>
+                        <option value="sedan">Sedán</option>
+                        <option value="suv">SUV</option>
+                    </select>
+                    <div class="invalid-feedback"></div>
+                </div>
+                <!-- Versión o variantes -->
+                <div class="mb-3">
+                    <label for="version" class="form-label">Versión o Variantes</label>
+                    <input type="text" class="form-control" id="version" name="version" placeholder="Introduce la versión o variante">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnAgregarModelo">Agregar Modelo</button>
+          </form>
+        </div>
+      </div><br>
+  
+      <!-- Lista de modelos -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Año</th>
+            <th>Tipo de Vehículo</th>
+            <th>Versión o Variantes</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Corolla</td>
+            <td>Toyota</td>
+            <td>2022</td>
+            <td>Sedán</td>
+            <td>Híbrida</td>
+            <td>
+              <button type="button" class="btn btn-warning btn-sm" id="BtnEditalModelo">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm"  id="BtnEliminarModelo">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!------------------ Gestionar Unidades ---------------------->
+    <div class="tab-pane fade" id="unidades" role="tabpanel" aria-labelledby="unidades-tab">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Gestionar Unidades</h3>
+            <button type="button" class="btn btn-outline-dark mb-3"data-bs-toggle="collapse" href="#ColapsoAgregarUnidad" role="button" aria-expanded="false" aria-controls="ColapsoAgregarUnidad">Agregar Unidad</button>
+        </div>
+        <div class="collapse" id="ColapsoAgregarUnidad">
+            <div class="card card-body">
+              <form id="agregarUnidadForm" method="post" action="#">   
+                <!-- (VIN) -->
+                <div class="mb-3">
+                  <label for="vin" class="form-label">Número de Serie (VIN)</label>
+                  <input type="text" class="form-control" id="vin" name="vin" placeholder="Introduce el número de serie" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+          
+                <!-- Placa o Matrícula -->
+                <div class="mb-3">
+                  <label for="placa" class="form-label">Placa o Matrícula</label>
+                  <input type="text" class="form-control" id="placa" name="placa" placeholder="Introduce la placa del vehículo" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+          
+                <!-- Marca -->
+                <div class="mb-3">
+                  <label for="marcaUnidad" class="form-label">Marca</label>
+                  <input type="text" class="form-control" id="marcaUnidad" name="marcaUnidad" placeholder="Introduce la marca" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+          
+                <!-- Modelo -->
+                <div class="mb-3">
+                  <label for="modeloUnidad" class="form-label">Modelo</label>
+                  <input type="text" class="form-control" id="modeloUnidad" name="modeloUnidad" placeholder="Introduce el modelo" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+          
+                <!-- Kilometraje -->
+                <div class="mb-3">
+                  <label for="kilometraje" class="form-label">Kilometraje</label>
+                  <input type="number" class="form-control" id="kilometraje" name="kilometraje" placeholder="Introduce el kilometraje">
+                  <div class="invalid-feedback">Este campo es opcional.</div>
+                </div>
+          
+                <!-- Fecha de alta -->
+                <div class="mb-3">
+                  <label for="fechaAlta" class="form-label">Fecha de Alta</label>
+                  <input type="date" class="form-control" id="fechaAlta" name="fechaAlta" required>
+                  <div class="invalid-feedback">La fecha de alta es obligatoria.</div>
+                </div>
+                <!-- Fecha de baja (opcional) -->
+                 <!-- <div class="mb-3">
+                  <label for="fechaBaja" class="form-label">Fecha de Baja</label>
+                  <input type="date" class="form-control" id="fechaBaja" name="fechaBaja">
+                  <div class="invalid-feedback">Este campo es opcional.</div>
+                </div>-->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary" id="btnAgregarUnidad">Agregar Unidad</button>
+                </div>
+              </form>
+            </div>
+          </div><br>
+      
+      <!-- Lista de unidades -->
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>VIN</th>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Kilometraje</th>
+                <th>Fecha de Alta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1HGCM82633A123456</td> <!-- VIN -->
+                <td>ABC-123</td> <!-- Placa -->
+                <td>Honda</td> <!-- Marca -->
+                <td>Accord</td> <!-- Modelo -->
+                <td>120000</td> <!-- Kilometraje -->
+                <td>2024-09-24</td> <!-- Fecha de Alta -->
+                <td>
+                    <button type="button" class="btn btn-secondary btn-sm">Editar</button>
+                    <button type="button" class="btn btn-danger btn-sm" id="btnEliminarUnidad">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+      <div class="d-grid">
+        <button type="button" class="btn btn-outline-dark mb-3" data-bs-toggle="collapse" href="#ColapsoUnidad" role="button" aria-expanded="false" aria-controls="ColapsoUnidad">Gestionar MTM</button>
+    </div>
+    </div>
+
+  <div class="collapse" id="ColapsoUnidad">
+    <div class="card card-body">
+      <form id="FormUnidadMTM" method="post" action="#">
+        <!-- Formulario  -->
+          <!-- Seleccionar Unidad -->
+      <div class="mb-3">
+        <label for="unidad" class="form-label">Unidad</label>
+        <select class="form-select" id="unidad" name="unidad" required>
+          <option value="">Seleccione una Unidad</option>
+          <option value="Unidad 1">Unidad 1</option>
+          <option value="Unidad 2">Unidad 2</option>
+          <!-- Más opciones de unidades -->
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+  
+      <!-- Definir Problema de la Unidad -->
+      <div class="mb-3">
+        <label for="problemaUnidad" class="form-label">Problema de la Unidad</label>
+        <textarea class="form-control" id="problemaUnidad" name="problemaUnidad" rows="4" placeholder="Describa el problema de la unidad" required></textarea>
+        <div class="invalid-feedback"></div>
+      </div>
+  
+      <!-- Fecha de Baja de la Unidad -->
+      <div class="mb-3">
+        <label for="fechaBaja" class="form-label">Fecha de Baja</label>
+        <input type="date" class="form-control" id="fechaBaja" name="fechaBaja" required>
+        <div class="invalid-feedback"></div>
+      </div>
+  
+      <!-- Fecha de Alta de la Unidad -->
+      <div class="mb-3">
+        <label for="InputfechaAlta" class="form-label">Fecha de Alta</label>
+        <input type="date" class="form-control" id="InputfechaAlta" name="InputfechaAlta" required>
+        <div class="invalid-feedback"></div>
+      </div>
+  
+      <!-- Botones de acción -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" id="btnGuardarMTM">Guardar</button>
+      </div>
+            
+      </form>
+    </div>
+  </div><br>
+
+    
+  <!------------------------------------Modales------------------------------------------------------------------------>
+
+  <!-- Modal para agregar marca -->
+<div class="modal fade" id="agregarMarcaModal" tabindex="-1" aria-labelledby="agregarMarcaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarMarcaModalLabel">Agregar Marca</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario de agregar marca -->
+                <form method="post" id="FormAgregarMarca" action="">
+                    <div class="mb-3">
+                        <label for="nombreMarca" class="form-label">Nombre de la Marca</label>
+                        <input type="text" class="form-control" id="nombreMarca" placeholder="Introduce la marca" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="alert alert-success d-none" id="Alerta">
+                      <strong>Exito!</strong> 
+                    </div>
+                    <button type="submit" id="btnAgregarMarca" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalGenerico" tabindex="-1" aria-labelledby="modalGenericoLabel" aria-hidden="true" data-bs-backdrop="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalGenericoLabel">Título del Modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="BodyGenerico">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btnGuardar">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!--------------------------MODAL ELIMINAR MARCA------------------------------------------->
+
+<!---<div class="modal fade" id="EliminarModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ConfirmarLabel">Confirmar Eliminación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="EliminarModalBody" class="modal-body">
+        ¿Estás seguro de que deseas eliminar esta marca?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger" id="btnEliminarMarca">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+---->
+
+</body>
+</html>
