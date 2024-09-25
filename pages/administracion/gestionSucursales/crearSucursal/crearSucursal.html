@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Silvetti Tomás, Illa Juan, Castillo Micaela, Pacheco Fabiana, Pelozo Lautaro">
+    <meta name="description" content="Sitio web de alquiler de autos">
+    <meta name="keywords" content="Alquiler de autos, proyecto integrador">
+    <link rel="stylesheet" href="../../../../bootstrap-5.3.3/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../../../bootstrap-5.3.3/bootstrap.min.js"></script>
+    <script type="module" src="./crearSucursal.js"></script>
+    <title>AutoExpress</title>
+</head>
+<body>
+    <header></header>
+    <main class="container">
+        <div class="d-flex flex-column align-items-center m-3 py-4">
+            <h1 class="text-center mb-3">Crear Sucursal</h1>
+            <form action="" method="post" class="row w-75">
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="nombreSucursal">Nombre:</label>
+                    <input type="text" class="form-control" name="nombreSucursal" id="nombreSucursal" placeholder="Ingrese el nombre de la sucursal" minlength="2" maxlength="100" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el nombre de la sucursal.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="provinciaSucursal">Provincia:</label>
+                    <select name="provinciaSucursal" id="provinciaSucursal" class="form-select" required>
+                        <option value="">Elija una provincia</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autonoma de Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquén">Neuquén</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucumán">Tucumán</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Debe elegir una provincia.
+                    </div>
+                </div>
+                <div class="row mb-3 pe-0">
+                    <div class="col-12 col-sm-6 d-flex flex-column mb-3 mb-sm-0 pe-0">
+                        <label for="calleSucursal">Calle:</label>
+                        <input type="text" class="form-control" name="calleSucursal" id="calleSucursal" placeholder="Ingrese la calle" minlength="2" maxlength="100" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$" required>
+                        <div class="invalid-feedback">
+                            Debe ingresar la calle de la sucursal.
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex flex-column pe-0">
+                        <label for="numeroCalleSucursal">Número:</label>
+                        <input type="number" class="form-control" name="numeroCalleSucursal" id="numeroCalleSucursal" placeholder="Ingrese el número" min="1" max="100000" pattern="^[0-9]+$" required>
+                        <div class="invalid-feedback">
+                            Debe ingresar el número de la sucursal.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-5">
+                    <label for="postalSucursal">Código postal (solo los 4 números):</label>
+                    <input type="number" class="form-control" name="postalSucursal" id="postalSucursal" placeholder="Ingrese el código postal" min="1000" max="9999" pattern="^[0-9]+$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el código postal de la sucursal.
+                    </div>
+                </div>
+                <div class="text-center text-sm-start">
+                    <button type="submit" id="enviar" class="btn btn-primary me-2">Crear</button>
+                    <button type="reset" id="limpiar" class="btn btn-dark">Limpiar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
