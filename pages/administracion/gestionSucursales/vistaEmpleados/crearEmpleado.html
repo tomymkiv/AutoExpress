@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Silvetti Tomás, Illa Juan, Castillo Micaela, Pacheco Fabiana, Pelozo Lautaro">
+    <meta name="description" content="Sitio web de alquiler de autos">
+    <meta name="keywords" content="Alquiler de autos, proyecto integrador">
+    <link rel="stylesheet" href="../../../../bootstrap-5.3.3/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../../../bootstrap-5.3.3/bootstrap.min.js"></script>
+    <script type="module" src="./crearEmpleado.js"></script>
+    <title>AutoExpress</title>
+</head>
+<body>
+    <header></header>
+    <main class="container">
+        <div class="d-flex flex-column align-items-center m-3 py-4">
+            <h1 class="text-center mb-5">Añadir Empleado</h1>
+            <form action="" method="post" class="row w-75">
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="puestoEmpleado">Puesto:</label>
+                    <select name="puestoEmpleado" id="puestoEmpleado" class="form-select" required>
+                        <option value="">Seleccione el puesto</option>
+                        <option value="Maestranza">Maestranza</option>
+                        <option value="Vendedor">Vendedor</option>
+                        <option value="Gerente de ventas">Gerente de ventas</option>
+                        <option value="Gerente de Finanzas">Gerente de Finanzas</option>
+                        <option value="Gerente General">Gerente General</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Debe elegir un puesto.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="nombreEmpleado">Nombre:</label>
+                    <input type="text" class="form-control" name="nombreEmpleado" id="nombreEmpleado" placeholder="Ingrese el nombre del empleado" minlength="2" maxlength="100" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el nombre del empleado.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="apellidoEmpleado">Apellido:</label>
+                    <input type="text" class="form-control" name="apellidoEmpleado" id="apellidoEmpleado" placeholder="Ingrese el apellido del empleado" minlength="2" maxlength="100" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el apellido del empleado.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="dniEmpleado">DNI:</label>
+                    <input type="number" class="form-control" name="dniEmpleado" id="dniEmpleado" placeholder="Ingrese el DNI del empleado" min="100000" max="99999999" pattern="^[0-9]+$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el DNI del empleado (solo números)
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="fechaNacimientoEmpleado">Fecha Nacimiento:</label>
+                    <input type="date" name="fechaNacimientoEmpleado" id="fechaNacimientoEmpleado" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar la fecha de nacimiento del empleado (+18 años)
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="celularEmpleado">Celular:</label>
+                    <input type="number" class="form-control" name="celularEmpleado" id="celularEmpleado" placeholder="Ingrese el número de celular" min="600000" max="11999999" pattern="^[0-9]+$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar el número de celular del empleado.
+                    </div>
+                </div>
+                <div class="row mb-3 pe-0">
+                    <div class="col-12 col-sm-6 d-flex flex-column mb-3 mb-sm-0 pe-0">
+                        <label for="calleEmpleado">Calle:</label>
+                        <input type="text" class="form-control" name="calleEmpleado" id="calleEmpleado" placeholder="Ingrese la calle" minlength="2" maxlength="100" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+$" required>
+                        <div class="invalid-feedback">
+                            Debe ingresar la calle del empleado.
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex flex-column pe-0">
+                        <label for="numeroCalleEmpleado">Número:</label>
+                        <input type="number" class="form-control" name="numeroCalleEmpleado" id="numeroCalleEmpleado" placeholder="Ingrese el número" min="1" max="100000" pattern="^[0-9]+$" required>
+                        <div class="invalid-feedback">
+                            Debe ingresar el número del empleado.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-5">
+                    <label for="urlImagenEmpleado">URL Imagen:</label>
+                    <input type="text" id="urlImagenEmpleado" name="urlImagenEmpleado" class="form-control" placeholder="Ingrese la dirección de la imagen" minlength="5" maxlength="400" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar una dirección compatible con la URL de una imagen.
+                    </div>
+                </div>
+                <div class="text-center text-sm-start">
+                    <button type="submit" id="enviar" class="btn btn-primary me-2">Añadir</button>
+                    <button type="reset" id="limpiar" class="btn btn-dark">Borrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
