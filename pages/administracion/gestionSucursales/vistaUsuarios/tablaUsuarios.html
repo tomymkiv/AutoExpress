@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Silvetti Tomás, Illa Juan, Castillo Micaela, Pacheco Fabiana, Pelozo Lautaro">
+    <meta name="description" content="Sitio web de alquiler de autos">
+    <meta name="keywords" content="Alquiler de autos, proyecto integrador">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../../bootstrap-5.3.3/bootstrap.min.css">
+    <link rel="stylesheet" href="./tablaUsuarios.css">
+    <script src="../../../../bootstrap-5.3.3/bootstrap.min.js"></script>
+    <title>AutoExpress</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1 class="text-center mt-4 mb-2">Nombre Sucursal</h1>
+        <div class="container-lg">
+            <div class="d-flex flex-column">
+                <h4 class="text-start ms-2 mt-4">Usuarios</h4>
+                <div class="text-start ms-2 mt-2 mb-3">
+                    <a href="./crearUsuario.html" class="btn btn-success fw-bold" aria-role="button">Añadir Usuario <i class="fa-solid fa-plus"></i></a>
+                </div>
+            </div>
+            <div class="table-responsive text-center d-sm-flex flex-sm-column justify-content-sm-center">
+                <table class="table table-bordered m-2 w-auto">
+                    <thead>
+                        <tr class="table-light">
+                            <th class="custom-th">Correo Electrónico</th>
+                            <th class="custom-th">Rol</th>
+                            <th class="custom-th">Contraseña</th>
+                            <th class="custom-th">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>juanperez@gmail.com</td>
+                            <td>Vendedor</td>
+                            <td>&ContraseñaSegura123</td>
+                            <td class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-warning me-3">Editar</button>
+                                <button type="button" class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>carloslopez@gmail.com</td>
+                            <td>Gerente de Ventas</td>
+                            <td>&ContraseñaSegura456</td>
+                            <td class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-warning me-3">Editar</button>
+                                <button type="button" class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mariagonzalez@gmail.com</td>
+                            <td>Vendedor</td>
+                            <td>&ContraseñaSegura789</td>
+                            <td class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-warning me-3">Editar</button>
+                                <button type="button" class="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

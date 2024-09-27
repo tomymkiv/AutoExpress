@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Silvetti Tomás, Illa Juan, Castillo Micaela, Pacheco Fabiana, Pelozo Lautaro">
+    <meta name="description" content="Sitio web de alquiler de autos">
+    <meta name="keywords" content="Alquiler de autos, proyecto integrador">
+    <link rel="stylesheet" href="../../../../bootstrap-5.3.3/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../../../bootstrap-5.3.3/bootstrap.min.js"></script>
+    <script type="module" src="./crearUsuario.js"></script>
+    <title>AutoExpress</title>
+</head>
+<body>
+    <header></header>
+    <main class="container">
+        <div class="d-flex flex-column align-items-center m-3 py-4">
+            <h1 class="text-center mb-5">Crear Usuario</h1>
+            <form action="" method="post" class="row w-75">
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="rolUsuario">Rol:</label>
+                    <select name="rolUsuario" id="rolUsuario" class="form-select" required>
+                        <option value="">Seleccione el rol</option>
+                        <option value="Maestranza">Maestranza</option>
+                        <option value="Vendedor">Vendedor</option>
+                        <option value="Gerente de ventas">Gerente de ventas</option>
+                        <option value="Gerente de Finanzas">Gerente de Finanzas</option>
+                        <option value="Gerente General">Gerente General</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Debe elegir un rol.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="correoUsuario">Correo Electrónico:</label>
+                    <input type="email" class="form-control" name="correoUsuario" id="correoUsuario" placeholder="Ingrese el correo electrónico" minlength="10" maxlength="40" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required />
+                    <div class="invalid-feedback">
+                        Debe ingresar una dirección de correo válida.
+                    </div>
+                </div> 
+                <div class="col-12 d-flex flex-column mb-3">
+                    <label for="claveUsuario">Contraseña:</label>
+                    <input type="password" class="form-control" name="claveUsuario" id="claveUsuario" placeholder="Ingrese una contraseña" minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,20}$" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar una contraseña que contenga más de 8 caracteres con dígitos, minúsculas, mayúsculas y símbolos.
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column mb-5">
+                    <label for="repetirClave">Repetir Contraseña</label>
+                    <input type="password" class="form-control" name="repetirClave" id="repetirClave" minlength="8" maxlength="20" disabled required>
+                    <div class="invalid-feedback">
+                        Las contraseñas deben ser iguales
+                    </div>
+                  </div>
+                <div class="text-center text-sm-start">
+                    <button type="submit" id="enviar" class="btn btn-primary me-2">Crear</button>
+                    <button type="reset" id="limpiar" class="btn btn-dark">Borrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

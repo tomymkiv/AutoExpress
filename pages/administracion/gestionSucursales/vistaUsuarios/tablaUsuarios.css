@@ -1,0 +1,10 @@
+.custom-th-id {
+    width: 100px;
+    min-width: 70px;
+}
+  
+.custom-th {
+    width: 300px;
+    min-width: 100px;
+    overflow: hidden;
+}
