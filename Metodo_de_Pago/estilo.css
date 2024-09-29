@@ -1,0 +1,153 @@
+/* Barra de navegación */
+.barra-nav {
+    padding: 15px;
+    border-bottom: 1px solid rgb(224, 221, 221);
+}
+
+.navbar {
+    padding: 0;
+}
+
+.logo-nav {
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    height: auto;
+}
+
+.nav-link {
+    transition: all 0.2s ease-in;
+}
+
+.nav-link:hover {
+    color: rgb(99, 99, 224);
+    font-weight: 600;
+}
+
+/* Elementos Generales */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: white;
+}
+
+footer {
+    margin: 50px auto 0 auto;
+    padding: 25px;
+}
+
+/* Datos personales */
+.container-datos-personales, aside {
+    background-color: rgba(224, 221, 221, 0.2);
+    border: 1px solid rgba(224, 221, 221, 0.1);
+    box-shadow: 0 0 1px 1px rgb(224, 221, 221);
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgb(99, 99, 224);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px;
+    width: 300px;
+    transition: all 0.2 ease-in;
+}
+
+.btn:hover {
+    border: 1px solid rgb(99, 99, 224);
+    background-color: white;
+    color: rgb(99, 99, 224);
+}
+
+/* Método de Pago */
+.pago {
+    margin-top: 50px;
+}
+
+/* Footer */
+.link {
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+}
+
+.footer-link:hover {
+    color: rgb(99, 99, 224);
+}
+
+.footer-texto {
+    color: white;
+    text-align: center;
+}
+
+.info {
+    padding-top: 25px;
+}
+
+.firma {
+    color: white;
+    padding-top: 30px;
+    text-align: center;
+}
+
+/* Responsividad */
+@media screen and (min-width: 1400px){
+    .container-datos-personales{
+        max-width: 80%;
+    }    
+}
+
+@media screen and (min-width: 768px){
+    .container-datos-personales{
+        max-width: 90%;
+    }    
+}
+
+@media screen and (max-width: 576px){
+    /* Barra de Navegación */
+    .logo-nav{
+        width: 130px;
+    }
+
+    .link {
+        align-items: center;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+    }
+}
+ 
+@media screen and (max-width: 375px){
+    /* Footer */
+    .link h5 {
+        font-size: 1rem;
+    }
+
+    .footer-link{
+        font-size: 0.8rem;
+    } 
+
+    .info {
+        font-size: 0.8rem;
+    }
+}
