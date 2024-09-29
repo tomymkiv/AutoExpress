@@ -1,0 +1,15 @@
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /*Uso flex-end porque algunas imagenes no se centran correctamente si usara "center"*/
+}
+.filtro-elegido{
+    font-weight: bold;
+}
+.card-equal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
